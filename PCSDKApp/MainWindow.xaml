@@ -1,0 +1,64 @@
+﻿<Window x:Class="Painting.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Painting"
+        mc:Ignorable="d"
+        Title="ABBPaint" Height="450" Width="700">
+    <Grid Margin="5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="4*"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.7*"></RowDefinition>
+                <RowDefinition Height="220"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" VerticalAlignment="Center">
+                <WrapPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <ComboBox x:Name="cbox_Controllers" Width="200" Margin="5" SelectionChanged="cbox_Controllers_SelectionChanged" ></ComboBox>
+                    <Label Content="System name:" VerticalAlignment="Center"/>
+                    <Label x:Name="lbSystem" Content="" VerticalAlignment="Center"/>
+                </WrapPanel>
+
+            </Grid>
+            <Grid Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <WrapPanel>
+                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Image Name="img" Margin="0" Width="400" Height="200" MouseLeftButtonDown="img_MouseLeftButtonDown" MouseLeftButtonUp="img_MouseLeftButtonUp" MouseMove="img_MouseMove"/>
+                    </Border>
+                    <Label x:Name="lbXY"  Content="0, 0" Width="66"/>
+                </WrapPanel>
+            </Grid>
+            <Grid Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <WrapPanel>
+                    <Button x:Name="btnClear"  Content="Clear canvas" Margin="5" Click="btnClear_Click" Style="{StaticResource ButtonStyle}"/>
+                    <Button x:Name="btnLoadImg" Content="Load Image" Margin="5" Click="btnLoadImg_Click" Style="{StaticResource ButtonStyle}"/>
+                    <Button x:Name="btnToRapid"  Content="Send to Rapid" Margin="5" Style="{StaticResource ButtonStyle}" Click="btnToRapid_Click"/>
+
+                </WrapPanel>
+            </Grid>
+            <Grid Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <WrapPanel>
+                    <Button x:Name="btnStart" Content="Start Rapid" Margin="5" Style="{StaticResource ButtonStyle}" Click="btnStart_Click"/>
+                    <Button x:Name="btnStop" Content="Stop Rapid" Margin="5" Style="{StaticResource ButtonStyle}" Click="btnStop_Click" />
+                </WrapPanel>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Column="1" Margin="5">
+            <StackPanel>
+                <Label x:Name="lbItems"  Content="0" />
+                <RichTextBox x:Name="rtbPoints" VerticalScrollBarVisibility="Visible" Height="380"/>
+            </StackPanel>
+            
+        </Grid>
+
+    </Grid>
+</Window>
