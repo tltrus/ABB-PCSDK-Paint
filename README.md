@@ -1,4 +1,4 @@
-# ABB-PCSDK-Paint
+# ABB-PCSDK-Paint-1
 
 Simple C# App with remote control of ABB robot.
 App has some not optimized things. it only shows how to use ABB PCSDK for communication.
